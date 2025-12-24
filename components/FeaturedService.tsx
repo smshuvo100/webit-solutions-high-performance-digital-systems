@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { CheckCircle2, LucideIcon } from 'lucide-react';
+import { CheckCircle2, LucideIcon, ArrowRight } from 'lucide-react';
 
 interface FeaturedServiceProps {
   title: string;
@@ -25,8 +25,10 @@ const FeaturedService: React.FC<FeaturedServiceProps> = ({
   accentColor = "#3b82f6",
   className = "" 
 }) => {
+  const btnClassSm = "bg-[#F9A825] text-white px-5 py-2.5 rounded-xl font-black text-[10px] uppercase tracking-[0.2em] hover:bg-[#ffb63a] shadow-lg shadow-[#F9A825]/20 active:scale-95 flex items-center justify-center gap-2 transition-all w-full mt-6";
+
   return (
-    <div className={`relative flex flex-col bg-gradient-to-br from-[#0c1220] to-[#040814] border border-white/10 rounded-[2.5rem] p-8 md:p-10 shadow-[0_40px_100px_rgba(0,0,0,0.6)] group transition-all duration-700 hover:border-white/20 ${className}`}>
+    <div className={`relative flex flex-col bg-gradient-to-br from-[#0c1220] to-[#040814] border border-white/10 rounded-[2.5rem] p-8 md:p-10 shadow-[0_40px_100px_rgba(0,0,0,0.6)] group transition-all duration-700 hover:border-white/20 h-full ${className}`}>
       {/* Background Glow */}
       <div 
         className="absolute top-0 right-0 w-48 h-48 blur-[80px] -z-10 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-1000" 
@@ -83,6 +85,10 @@ const FeaturedService: React.FC<FeaturedServiceProps> = ({
             </div>
           ))}
         </div>
+        
+        <button className={btnClassSm}>
+          Get Started <ArrowRight className="w-3 h-3" />
+        </button>
       </div>
 
       {/* Decorative interactive element */}
